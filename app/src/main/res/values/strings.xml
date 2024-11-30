@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Pennywise</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tongluong">Tổng lương</string>
+    <string name="Tongchiphi">Tổng chi phí</string>
+    <string name="thang">Tháng</string>
+    <string name="tietkiem">Tiết kiệm</string>
+    <string name="nhaclai">Nhắc lại</string>
+    <string name="ngansach">Ngân sách</string>
+    <string name="moinhat">Mới nhất</string>
+    <string name="doan">Đồ ăn</string>
+    <string name="grap">Grap</string>
+    <string name="shoping">Shopping</string>
+
+
 </resources>

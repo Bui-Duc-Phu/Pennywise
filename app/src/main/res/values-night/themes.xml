@@ -4,4 +4,12 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="CustomActiveIndicatorStyle">
+        <item name="android:background">@drawable/custom_active_indicator</item>
+    </style>
+
+
+    <style name="Theme.Pennywise" parent="Base.Theme.Pennywise" />
+
 </resources>
