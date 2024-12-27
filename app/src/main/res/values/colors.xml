@@ -2,10 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white1">#F2FFFFFF</color>
+    <color name="white2">#E6FFFFFF</color> <!-- Alpha giảm xuống 90% -->
+    <color name="white3">#CCFFFFFF</color> <!-- Alpha giảm xuống 80% -->
+    <color name="white4">#B3FFFFFF</color> <!-- Alpha giảm xuống 70% -->
+
     <color name="primary_blue1">#0E33F3</color>
     <color name="primary_blue2">#2F51FF</color>
     <color name="text_black_primary">#242D35</color>
     <color name="text_white_primary">#FFFFFF</color>
     <color name="gray1">#EBEEF0</color>
     <color name="gray2">#6B7580</color>
+    <color name="gray3_back">#DCDFE3</color>
+    <color name="gray4_back">#F5F6F7</color>
 </resources>

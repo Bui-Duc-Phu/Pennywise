@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseAdapter<T, VB : ViewBinding>(
     private val context: Context,
-    private val items: List<T>,
+    private var items: List<T>,
     private val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
 ) : RecyclerView.Adapter<BaseAdapter<T, VB>.BaseViewHolder>() {
 
@@ -27,4 +27,10 @@ abstract class BaseAdapter<T, VB : ViewBinding>(
     }
 
     override fun getItemCount(): Int = items.size
+
+
+    fun updateItems(newItems: List<T>) {
+        items = newItems
+        notifyDataSetChanged() // Thông báo RecyclerView làm mới giao diện
+    }
 }

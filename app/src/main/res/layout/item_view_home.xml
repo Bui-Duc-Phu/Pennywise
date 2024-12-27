@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+
+    android:layout_marginTop="32dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white2"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/view23"
+            android:layout_width="44dp"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/custom_view23"
+            android:layout_height="44dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_bike"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/view24"
+            android:layout_marginStart="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white2"
+            android:layout_toEndOf="@id/view23">
+            <LinearLayout
+                android:id="@+id/view241"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white2"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/categoryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đồ ăn"
+                    android:fontFamily="@font/_24pt_semibold"
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:id="@+id/dateUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20-11-2024"
+                    android:fontFamily="@font/inter_28pt_regular"
+                    android:textSize="14dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view242"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/view241"
+                android:layout_alignParentEnd="true"
+                android:background="@color/white2"
+                android:gravity="right"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/sumMoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- 25,000đ"
+                    android:fontFamily="@font/_24pt_semibold"
+                    android:textSize="16dp"
+                    />
+                <TextView
+                    android:id="@+id/foundation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shoppe food"
+                    android:fontFamily="@font/inter_28pt_regular"
+                    android:textSize="14dp"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

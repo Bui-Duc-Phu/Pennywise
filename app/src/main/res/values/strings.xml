@@ -12,6 +12,9 @@
     <string name="doan">Đồ ăn</string>
     <string name="grap">Grap</string>
     <string name="shoping">Shopping</string>
+    <string name="home">Home</string>
+    <string name="tiet_kiem">Tiết Kiệm</string>
+    <string name="moi_nhat">Mới nhất</string>
 
 
 </resources>
