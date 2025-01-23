@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Pennywise"
 include(":app")
- 
+include(":TestModel")

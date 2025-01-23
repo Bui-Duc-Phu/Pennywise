@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="whiteback">#F5F6F7</color>
+    <color name="whiteback2">#ebedf0</color>
     <color name="white1">#F2FFFFFF</color>
     <color name="white2">#E6FFFFFF</color> <!-- Alpha giảm xuống 90% -->
     <color name="white3">#CCFFFFFF</color> <!-- Alpha giảm xuống 80% -->

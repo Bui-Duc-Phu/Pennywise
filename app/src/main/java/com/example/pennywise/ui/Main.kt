@@ -1,22 +1,20 @@
 package com.example.pennywise.ui
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.pennywise.Adapter.AdapterViewPager
 import com.example.pennywise.R
 import com.example.pennywise.databinding.ActivityMainBinding
+import com.example.pennywise.ui.fragment.Chat
 import com.example.pennywise.ui.fragment.Home
-import com.example.pennywise.ui.fragment.Notification
-import com.example.pennywise.ui.fragment.SaveMny
 import com.example.pennywise.ui.fragment.Setting
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class Main : AppCompatActivity() {
 
     private lateinit var navController: NavController
@@ -35,9 +33,9 @@ class Main : AppCompatActivity() {
     private fun setupViewPagerAndBottomNav() {
         val fragments = listOf(
             Home(),
-            SaveMny(),
-            Notification(),
-            Setting()
+            Chat(),
+            Setting(),
+
         )
 
         // Gán Adapter cho ViewPager2
@@ -50,9 +48,8 @@ class Main : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> binding.viewPager2.currentItem = 0
-                R.id.nav_tasks -> binding.viewPager2.currentItem = 1
-                R.id.nav_notifications -> binding.viewPager2.currentItem = 2
-                R.id.nav_settings -> binding.viewPager2.currentItem = 3
+                R.id.nav_chat -> binding.viewPager2.currentItem = 1
+                R.id.nav_settings -> binding.viewPager2.currentItem = 2
             }
             true
         }
@@ -63,9 +60,8 @@ class Main : AppCompatActivity() {
                 super.onPageSelected(position)
                 when (position) {
                     0 -> binding.bottomNavigation.menu.findItem(R.id.nav_home).isChecked = true
-                    1 -> binding.bottomNavigation.menu.findItem(R.id.nav_tasks).isChecked = true
-                    2 -> binding.bottomNavigation.menu.findItem(R.id.nav_notifications).isChecked = true
-                    3 -> binding.bottomNavigation.menu.findItem(R.id.nav_settings).isChecked = true
+                    1 -> binding.bottomNavigation.menu.findItem(R.id.nav_chat).isChecked = true
+                    2 -> binding.bottomNavigation.menu.findItem(R.id.nav_settings).isChecked = true
                 }
             }
         })

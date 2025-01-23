@@ -7,6 +7,7 @@ plugins {
 
     //hilt
     id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -58,12 +59,14 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":TestModel"))
 
     //room
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
+    kapt ("android.arch.persistence.room:compiler:1.1.1")
 
 
     //viewModel
@@ -79,6 +82,18 @@ dependencies {
     //hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+
+
+
 
 }
 

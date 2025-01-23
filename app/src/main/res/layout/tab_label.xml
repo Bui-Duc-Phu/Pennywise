@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/backgrMain"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="130dp"
-    android:layout_height="150dp"
+    android:layout_width="150dp"
+    android:layout_height="170dp"
     app:cardCornerRadius="25dp"
     app:cardElevation="0dp"
     app:cardBackgroundColor="@color/white"

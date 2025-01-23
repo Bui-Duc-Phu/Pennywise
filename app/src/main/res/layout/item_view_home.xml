@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-
     android:layout_marginTop="32dp"
     >
     <RelativeLayout
@@ -85,6 +84,5 @@
                     />
             </LinearLayout>
         </RelativeLayout>
-
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
