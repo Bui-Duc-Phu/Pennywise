@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Room
 import com.example.pennywise.data.AppDatabase
 import com.example.pennywise.data.dao.ExpenseDao
-import com.example.pennywise.data.dao.MessageDao
 import com.example.pennywise.data.dao.WalletDao
 import dagger.Module
 import dagger.Provides
@@ -32,8 +31,5 @@ object AppModule {
     fun provideExpenseDao(database: AppDatabase): ExpenseDao {
         return database.expenseDao()
     }
-    @Provides
-    fun provideMessageDao(database: AppDatabase): MessageDao {
-        return database.messageDao()
-    }
+
 }

@@ -18,14 +18,13 @@ class DeepSeekViewModel @Inject constructor(private val repository: DeepSeekRepo
     val response: LiveData<DeepSeekResponse> get() = _response
 
     fun fetchResults(userMessage: String) {
-        println("call")
         viewModelScope.launch {
             try {
                 val result = repository.getDeepSeekResults(userMessage)
                 _response.value = result
             } catch (e: Exception) {
                 Log.e("DeepSeekViewModel", "Error: ${e.message}")
-                println("DeepSeekViewModel" + "Error: ${e.message}")
+                println("DeepSeekViewModel" + "Error: ${e}")
             }
         }
     }

@@ -19,6 +19,7 @@
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_nav_menu"
         android:background="@android:color/white"
+
         app:itemIconTint="@color/black"
         android:layout_alignParentBottom="true"
         app:itemActiveIndicatorStyle="@style/CustomActiveIndicatorStyle"

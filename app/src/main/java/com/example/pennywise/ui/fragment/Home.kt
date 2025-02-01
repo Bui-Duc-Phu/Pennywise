@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.pennywise.Adapter.recylerview_adapter.TabLabelAdapter
+
 import com.example.pennywise.data.entity.ExpenseEntity
 import com.example.pennywise.data.entity.WalletEntity
 import com.example.pennywise.databinding.FragmentHomeBinding // Tự động sinh ra từ layout `fragment_home.xml`
@@ -22,7 +23,6 @@ class Home : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!! // Truy cập binding an toàn
-    private val viewModel: DeepSeekViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,15 +52,7 @@ class Home : Fragment() {
     }
     private fun _init() {
 
-        lifecycleScope.launch {
-            val userMessage = "list"
-            viewModel.response.observe(viewLifecycleOwner) { response ->
-                response?.let {
-                    println( it.choices[0].message.content)
-                }
-            }
-            viewModel.fetchResults(userMessage)
-        }
+
     }
 
 }

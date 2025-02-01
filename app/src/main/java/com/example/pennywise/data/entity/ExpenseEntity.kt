@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class ExpenseEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val date: String, // Ngày sử dụng chi phí (sẽ được tính toán khi thêm mới)
-    val attribute: String, // Tên khoản chi tiêu
-    val price: Double, // Số tiền đã chi
-    val shop: String // Cửa hàng đã chi tiêu
+    val date: String,
+    val attribute: String,
+    val price: Double,
+    val shop: String
 )

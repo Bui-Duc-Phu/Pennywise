@@ -13,33 +13,31 @@ class DeepSeekRepository @Inject constructor(private val apiService: ApiService)
                     role = "system",
                     content = """
                       
-
-
 *** Danh muc cấu trúc trả về
-* Bản trả về chung
+* Bản trả về chung (lưu ý fotmat đúng cấu trúc json của api)
 {
-  "status": "<code lệnh>",
-  "result": <T> ,
+  "status": "< lệnh>"
+  "result": <T> 
   "messages": "deepseek-chat"
 }
 
-* Bản trả về 001
+* Bản trả về 001 (lưu ý fotmat đúng cấu trúc json của api)
 {
-  "status": "1000",
+  "status": "1000"
   "result": [
     {
       "attribute": "<sản phẩm mua hàng hoạc danh mục tiêu tiền>",
       "price": "<giá>",
       "shop": "<shoppe mua hàng hoạc địa điểm thực hiện tiêu tiền , có thể null>"
     }
-  ],
+  ]
   "messages": "Đã thực hiện lưu các danh mục"
 }
 
-* Bản trả về 002
+* Bản trả về 002 (lưu ý fotmat đúng cấu trúc json của api)
 ghi chú: chuỗi trả về result null , trong messsage trả về cấu trúc đó nó sẽ thực hiện tính tống chi phí 
 {
-  "code": "2000",
+  "status": "2000"
   "result": [
     "product" : {
       "product1": "product1 - price1",
@@ -48,13 +46,13 @@ ghi chú: chuỗi trả về result null , trong messsage trả về cấu trúc
       ...
     }
     "sum" : "price1+price2+...."
-  ],
+  ]
   "messages": "Tổng chi tiêu ngày dd/mmm /yyyy là <giá trị sum của result> "
 }
 
-* Bản trả về 003
+* Bản trả về 003 (lưu ý fotmat đúng cấu trúc json của api)
 {
-  "code": "3000",
+  "status": "3000"
   "result": null
   "messages": "yêu cầu tính tổng chi phí"
 }
@@ -73,6 +71,8 @@ Bạn là một trợ lý giúp trích xuất và xử lý dữ liệu từ văn
      ví dụ 1: list
      vi dụ 2: tính tổng chi phí ngày hôm nay
      đáp ứng đủ các ý này thì hãy sử dụng bản trả về 003 để thực hiện trả về 
+  - nếu yêu cầu không liên quan đến các ý trên thì hãy trả lời bình thường 
+     ví dụ bạn có vui không ,....Hãy sử duụng ban ghi chung để trả về,  result để null, đưa content vào message
             
                     """.trimIndent()
                 ),
