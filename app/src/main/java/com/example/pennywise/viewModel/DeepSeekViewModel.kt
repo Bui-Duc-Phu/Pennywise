@@ -17,14 +17,18 @@ class DeepSeekViewModel @Inject constructor(private val repository: DeepSeekRepo
     private val _response = MutableLiveData<DeepSeekResponse>()
     val response: LiveData<DeepSeekResponse> get() = _response
 
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String> get() = _errorMessage
+
     fun fetchResults(userMessage: String) {
         viewModelScope.launch {
             try {
                 val result = repository.getDeepSeekResults(userMessage)
                 _response.value = result
             } catch (e: Exception) {
+                _errorMessage.value = ""
+                _errorMessage.value = "Server đang bận"
                 Log.e("DeepSeekViewModel", "Error: ${e.message}")
-                println("DeepSeekViewModel" + "Error: ${e}")
             }
         }
     }

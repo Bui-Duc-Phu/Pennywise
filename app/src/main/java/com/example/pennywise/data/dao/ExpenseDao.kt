@@ -2,6 +2,7 @@ package com.example.pennywise.data.dao
 
 import androidx.room.*
 import com.example.pennywise.data.entity.ExpenseEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExpenseDao {
@@ -16,4 +17,7 @@ interface ExpenseDao {
 
     @Query("DELETE FROM expense_table WHERE id = :id")
     suspend fun deleteExpense(id: Int)
+
+    @Query("SELECT SUM(price) FROM expense_table WHERE date LIKE :month || '%'")
+    fun getTotalExpenseByMonth(month: String): Flow<Double?>
 }

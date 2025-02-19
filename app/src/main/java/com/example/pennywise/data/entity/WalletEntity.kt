@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class WalletEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val totalSalary: Double, // Tổng lương
-    val totalExpense: Double, // Tổng chi phí
+    val totalSalary: String, // Tổng lương
+    val totalExpense: String, // Tổng chi phí
     val month: String, // Tháng (VD: "01-2025")
 )

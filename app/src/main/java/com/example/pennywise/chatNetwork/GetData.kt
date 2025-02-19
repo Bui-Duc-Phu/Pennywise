@@ -8,10 +8,17 @@ import com.google.gson.reflect.TypeToken
 
 import com.google.gson.JsonParser
 import com.google.gson.stream.JsonReader
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.io.StringReader
 
 object GetData
 {
+
+
+
+
+
     fun getStatus(json: String): String {
         return try {
 

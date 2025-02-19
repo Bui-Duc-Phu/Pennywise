@@ -24,7 +24,7 @@
                 android:layout_marginStart="20sp"
                 android:fontFamily="@font/_28pt_semibold"
                 android:textColor="@color/black"
-                android:text="@string/home"
+                android:text="PennyWise"
                 android:textSize="18sp" />
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -86,7 +86,7 @@
                           app:layout_constraintStart_toStartOf="parent"
                           app:layout_constraintTop_toBottomOf="@+id/imageView2" />
                       <TextView
-                          android:id="@+id/tongluong_edt"
+                          android:id="@+id/tongluong"
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:textColor="@color/text_black_primary"
@@ -122,7 +122,6 @@
                           android:src="@drawable/wallet"
                           app:layout_constraintStart_toStartOf="parent"
                           app:layout_constraintTop_toTopOf="parent" />
-
                       <TextView
                           android:id="@+id/textView"
                           android:layout_width="wrap_content"
@@ -136,7 +135,7 @@
                           app:layout_constraintStart_toStartOf="parent"
                           app:layout_constraintTop_toBottomOf="@+id/imageView3" />
                       <TextView
-                          android:id="@+id/tongChiP_edt"
+                          android:id="@+id/tongChiP"
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
                           android:textColor="@color/text_black_primary"

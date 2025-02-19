@@ -9,6 +9,6 @@ data class ExpenseEntity(
     val id: Int = 0,
     val date: String,
     val attribute: String,
-    val price: Double,
-    val shop: String
+    val price: String,
+    val shop: String?
 )

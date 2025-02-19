@@ -2,6 +2,7 @@ package com.example.pennywise.data.repository
 
 import com.example.pennywise.data.dao.ExpenseDao
 import com.example.pennywise.data.entity.ExpenseEntity
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class ExpenseRepository @Inject constructor(private val expenseDao: ExpenseDao) {
@@ -20,5 +21,9 @@ class ExpenseRepository @Inject constructor(private val expenseDao: ExpenseDao) 
 
     suspend fun deleteExpense(id: Int) {
         expenseDao.deleteExpense(id)
+    }
+
+    suspend fun getTotalExpenseByMonth(month: String): Flow<Double?>{
+        return expenseDao.getTotalExpenseByMonth(month)
     }
 }

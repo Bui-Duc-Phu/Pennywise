@@ -13,4 +13,12 @@ interface WalletDao {
 
     @Query("UPDATE wallet_table SET totalExpense = :totalExpense WHERE month = :month")
     suspend fun updateTotalExpense(month: String, totalExpense: Double)
+
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(wallet: WalletEntity)
+
+    @Query("SELECT EXISTS(SELECT 1 FROM wallet_table WHERE month = :month)")
+    suspend fun isMonthExists(month: String): Boolean
+
 }

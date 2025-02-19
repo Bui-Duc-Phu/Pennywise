@@ -17,4 +17,8 @@ class WalletRepository @Inject constructor(private val walletDao: WalletDao) {
     suspend fun updateTotalExpense(month: String, totalExpense: Double) {
         walletDao.updateTotalExpense(month, totalExpense)
     }
+
+    suspend fun isMonthExists(month: String): Boolean {
+        return walletDao.isMonthExists(month)
+    }
 }

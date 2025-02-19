@@ -5,8 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -15,10 +17,21 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit {
-    println("khoi tao")
+    fun provideOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS) // Tăng thời gian kết nối
+            .readTimeout(30, TimeUnit.SECONDS)   // Tăng thời gian đọc dữ liệu
+            .writeTimeout(30, TimeUnit.SECONDS)  // Tăng thời gian ghi dữ liệu
+            .retryOnConnectionFailure(true)      // Tự động thử lại khi lỗi kết nối
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.deepseek.com/")
+            .client(okHttpClient) // Sử dụng OkHttpClient với timeout
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
